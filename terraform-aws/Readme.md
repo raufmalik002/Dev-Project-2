@@ -130,7 +130,7 @@ This project helped me understand:
 
 ---
 
-# 🧠 What I Learned Across These Projects
+#  What I Learned Across These Projects
 
 * Designing CI/CD pipelines
 * Automating infrastructure using Terraform
@@ -141,7 +141,7 @@ This project helped me understand:
 
 ---
 
-# 🎯 Future Improvements
+#  Future Improvements
 
 * Implement Terraform remote backend using S3
 * Add DynamoDB for state locking
@@ -151,7 +151,7 @@ This project helped me understand:
 
 ---
 
-# 🙌 Conclusion
+#  Conclusion
 
 These projects represent my journey into DevOps, focusing on practical implementation rather than just theoretical knowledge.
 
