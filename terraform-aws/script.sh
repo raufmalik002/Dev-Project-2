@@ -27,3 +27,18 @@ docker rm -f flask-container || true
 
 # Run container
 docker run -d -p 5000:5000 --name flask-container flask-app
+
+# Configure Nginx reverse proxy
+cat <<EOF > /etc/nginx/sites-available/default
+server {
+    listen 80;
+
+    location / {
+        proxy_pass http://localhost:5000;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+    }
+}
+EOF
+
+systemctl restart nginx
