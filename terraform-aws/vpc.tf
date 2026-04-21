@@ -1,7 +1,7 @@
 resource "aws_vpc" "main" {
-  cidr_block       = var.vpc_cidr
-  instance_tenancy = "default"
-  enable_dns_support = true
+  cidr_block           = var.vpc_cidr
+  instance_tenancy     = "default"
+  enable_dns_support   = true
   enable_dns_hostnames = true
 
   tags = {
@@ -10,9 +10,9 @@ resource "aws_vpc" "main" {
 }
 
 resource "aws_subnet" "Public" {
-  vpc_id     = aws_vpc.main.id
-  cidr_block = var.subnet_cidr
-  availability_zone = var.availability_zone
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = var.subnet_cidr
+  availability_zone       = var.availability_zone
   map_public_ip_on_launch = true
 
   tags = {
@@ -38,7 +38,7 @@ resource "aws_route_table" "Public_rt" {
 }
 
 resource "aws_route_table_association" "Public_assoc" {
-    subnet_id      = aws_subnet.Public.id
-    route_table_id = aws_route_table.Public_rt.id
-  
+  subnet_id      = aws_subnet.Public.id
+  route_table_id = aws_route_table.Public_rt.id
+
 }
