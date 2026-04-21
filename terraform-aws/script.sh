@@ -2,10 +2,13 @@
 set -ex   # VERY IMPORTANT (shows errors)
 
 apt update -y
-apt install -y docker.io git
+apt install -y docker.io git nginx
 
 systemctl start docker
 systemctl enable docker
+
+systemctl start nginx               # ✅ start nginx
+systemctl enable nginx              # ✅ enable nginx to start on boot
 
 # Add ubuntu user to docker group
 usermod -aG docker ubuntu
